@@ -1,6 +1,8 @@
+
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Calendar, Github, PenTool } from 'lucide-react';
+import { Calendar, Github, PenTool, ExternalLink } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
 
 interface ProjectProps {
   title: string;
@@ -8,10 +10,11 @@ interface ProjectProps {
   duration: string;
   tech: string[];
   github?: string;
+  image: string;
   index: number;
 }
 
-const Project = ({ title, description, duration, tech, github, index }: ProjectProps) => {
+const Project = ({ title, description, duration, tech, github, image, index }: ProjectProps) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -23,39 +26,48 @@ const Project = ({ title, description, duration, tech, github, index }: ProjectP
       initial={{ opacity: 0, y: 20 }}
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="bg-portfolio-dark/50 backdrop-blur-lg rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-white/10"
+      className="h-full"
     >
-      <div className="p-6">
-        <div className="flex items-center justify-between mb-4">
-          <h3 className="text-xl font-bold text-white">{title}</h3>
-          <div className="flex items-center text-sm text-gray-400">
-            <Calendar size={16} className="mr-1" />
-            <span>{duration}</span>
+      <Card className="h-full bg-[#1E293B] border border-white/10 overflow-hidden hover:shadow-xl transition-shadow duration-300">
+        <div className="w-full h-48 overflow-hidden">
+          <img 
+            src={image} 
+            alt={title} 
+            className="w-full h-full object-cover object-center transition-transform duration-300 hover:scale-105"
+          />
+        </div>
+        <CardContent className="p-6">
+          <div className="flex items-center justify-between mb-4">
+            <h3 className="text-xl font-bold text-white">{title}</h3>
+            <div className="flex items-center text-sm text-gray-400">
+              <Calendar size={16} className="mr-1" />
+              <span>{duration}</span>
+            </div>
           </div>
-        </div>
-        
-        <p className="text-gray-300 mb-4">{description}</p>
-        
-        <div className="flex flex-wrap gap-2 mb-4">
-          {tech.map((item, i) => (
-            <span key={i} className="px-3 py-1 rounded-full bg-portfolio-primary/20 text-sm text-white">
-              {item}
-            </span>
-          ))}
-        </div>
-        
-        {github && (
-          <a
-            href={github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center text-white hover:text-portfolio-accent transition-colors"
-          >
-            <Github size={20} className="mr-2" />
-            <span>View Repository</span>
-          </a>
-        )}
-      </div>
+          
+          <p className="text-gray-300 mb-4">{description}</p>
+          
+          <div className="flex flex-wrap gap-2 mb-4">
+            {tech.map((item, i) => (
+              <span key={i} className="px-3 py-1 rounded-full bg-portfolio-primary/20 text-sm text-white">
+                {item}
+              </span>
+            ))}
+          </div>
+          
+          {github && (
+            <a
+              href={github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center text-white hover:text-portfolio-accent transition-colors"
+            >
+              <Github size={20} className="mr-2" />
+              <span>View Repository</span>
+            </a>
+          )}
+        </CardContent>
+      </Card>
     </motion.div>
   );
 };
@@ -69,29 +81,32 @@ export const Projects = () => {
   const projects = [
     {
       title: "APNA – AI – Placement related portal",
-      description: "Developed an AI-driven placement portal that utilizes NLP-based scoring to match candidate resumes with job profiles. Implemented an activity scoring system that evaluates candidates based on their LinkedIn and GitHub activity. Additionally, integrated AI-powered chatbots designed to assist software engineers, AI engineers, and data scientists in job-related queries.",
+      description: "Developed an AI-driven placement portal that utilizes NLP-based scoring to match candidate resumes with job profiles. Implemented an activity scoring system that evaluates candidates based on their LinkedIn and GitHub activity.",
       duration: "June 2023 - July 2024",
       tech: ["Python", "SQL", "LangChain", "Google Gemini API"],
-      github: "https://github.com/thecloudcode/apna.ai"
+      github: "https://github.com/thecloudcode/apna.ai",
+      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     },
     {
       title: "Fitness Tracker – AI-Powered Activity Monitoring",
-      description: "Designed a data-driven fitness tracking system that processes sensor data to monitor user activities. The system leverages machine learning models such as SVM, Random Forest, and Neural Networks for predictive analytics and activity recognition. Applied advanced data techniques including feature engineering, outlier detection, PCA, clustering, and custom algorithms for repetition counting.",
+      description: "Designed a data-driven fitness tracking system that processes sensor data to monitor user activities. The system leverages machine learning models such as SVM, Random Forest, and Neural Networks for predictive analytics.",
       duration: "Oct 2023 - Nov 2023",
-      tech: ["Python", "Machine Learning", "SVM", "Random Forest", "Neural Networks"],
-      github: "https://github.com/Ajay-Chelliah/FitnessTracker"
+      tech: ["Python", "Machine Learning", "SVM", "Random Forest"],
+      github: "https://github.com/Ajay-Chelliah/FitnessTracker",
+      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     },
     {
       title: "Object Recognition System – AI-Based Object Detection",
-      description: "Built an object recognition model using YOLOv8 to classify objects based on shape and color. Integrated bit counting techniques to improve detection accuracy and implemented tracking algorithms like ByteTrack and Supervision to enhance object identification and movement.",
+      description: "Built an object recognition model using YOLOv8 to classify objects based on shape and color. Integrated bit counting techniques to improve detection accuracy and implemented tracking algorithms.",
       duration: "Nov 2023 - Dec 2023",
       tech: ["Python", "YOLOv8", "Supervision", "ByteTrack"],
-      github: "https://github.com/keerthi5465/YOLOv8---Traffic"
+      github: "https://github.com/keerthi5465/YOLOv8---Traffic",
+      image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     }
   ];
 
   return (
-    <section id="projects" className="py-20 bg-portfolio-dark/50">
+    <section id="projects" className="py-20 bg-[#111827]">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div
           ref={ref}
@@ -107,7 +122,7 @@ export const Projects = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <Project
               key={index}
@@ -116,17 +131,18 @@ export const Projects = () => {
               duration={project.duration}
               tech={project.tech}
               github={project.github}
+              image={project.image}
               index={index}
             />
           ))}
         </div>
 
-        {/* Updated Achievements/Certifications Section */}
+        {/* Certifications Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-16 bg-portfolio-dark/50 backdrop-blur-lg rounded-lg shadow-lg p-8 border border-white/10"
+          className="mt-16 bg-[#1E293B] backdrop-blur-lg rounded-lg shadow-lg p-8 border border-white/10"
         >
           <h3 className="text-2xl font-bold text-white mb-6 text-center">Certifications</h3>
           

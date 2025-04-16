@@ -5,7 +5,7 @@ import { ThreeScene } from '../3d/Scene';
 
 export const Hero = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center pt-16">
+    <section id="home" className="relative min-h-screen flex items-center pt-16 bg-[#111827]">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div
@@ -14,14 +14,14 @@ export const Hero = () => {
             transition={{ duration: 0.6 }}
             className="text-center lg:text-left"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-portfolio-dark">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white">
               <span className="block">Hi, I'm</span>
               <span className="text-portfolio-primary block mt-2">Keerthi Korrapati</span>
             </h1>
-            <h2 className="text-xl md:text-2xl font-medium text-gray-600 mb-8">
+            <h2 className="text-xl md:text-2xl font-medium text-gray-300 mb-8">
               Software Engineer & Data Engineer
             </h2>
-            <p className="text-lg text-gray-700 mb-8 max-w-lg mx-auto lg:mx-0">
+            <p className="text-lg text-gray-400 mb-8 max-w-lg mx-auto lg:mx-0">
               Passionate about creating innovative solutions and pushing the boundaries of technology.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -59,7 +59,7 @@ export const Hero = () => {
       >
         <a 
           href="#about" 
-          className="flex flex-col items-center text-gray-500 hover:text-portfolio-primary transition-colors duration-300"
+          className="flex flex-col items-center text-gray-400 hover:text-portfolio-primary transition-colors duration-300"
         >
           <span className="mb-2 text-sm">Scroll Down</span>
           <ArrowDown className="animate-bounce" size={20} />
