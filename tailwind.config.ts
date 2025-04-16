@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -62,14 +63,19 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-        // Portfolio custom colors
+        // Portfolio colorful palette
         portfolio: {
           primary: '#6E59A5', // Primary purple
           secondary: '#9b87f5', // Secondary purple
-          accent: '#D6BCFA', // Light purple accent
-          dark: '#1A1F2C', // Dark background
-          light: '#F1F0FB', // Light background
-          neutral: '#8E9196', // Neutral gray
+          accent: '#FEC6A1', // Soft orange accent
+          primary2: '#F2FCE2', // Soft green
+          accent2: '#FEF7CD', // Soft yellow
+          accent3: '#E5DEFF', // Soft purple
+          accent4: '#FFDEE2', // Soft pink
+          accent5: '#FDE1D3', // Soft peach
+          accent6: '#D3E4FD', // Soft blue
+          light: '#FFFFFF', // White background
+          neutral: '#F1F0FB', // Light neutral
         }
 			},
 			borderRadius: {

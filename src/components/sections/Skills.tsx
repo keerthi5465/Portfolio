@@ -1,3 +1,4 @@
+
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Code, Database, Server, Cpu, Users } from 'lucide-react';
@@ -21,17 +22,17 @@ const SkillCategory = ({ title, skills, icon, index }: SkillCategoryProps) => {
       initial={{ opacity: 0, y: 20 }}
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="bg-portfolio-dark/50 backdrop-blur-lg rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 group border border-white/10"
+      className="bg-white/80 backdrop-blur-lg rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 group border border-gray-100"
     >
-      <div className="w-12 h-12 rounded-full bg-portfolio-primary/10 flex items-center justify-center mb-4 group-hover:bg-portfolio-primary/20 transition-colors duration-300">
-        <div className="text-portfolio-accent">{icon}</div>
+      <div className="w-12 h-12 rounded-full bg-portfolio-accent3/20 flex items-center justify-center mb-4 group-hover:bg-portfolio-accent3/40 transition-colors duration-300">
+        <div className="text-portfolio-primary">{icon}</div>
       </div>
       
-      <h3 className="text-xl font-bold text-white mb-3">{title}</h3>
+      <h3 className="text-xl font-bold text-gray-800 mb-3">{title}</h3>
       
       <ul className="space-y-2">
         {skills.map((skill, i) => (
-          <li key={i} className="text-gray-300 flex items-center">
+          <li key={i} className="text-gray-600 flex items-center">
             <div className="w-2 h-2 rounded-full bg-portfolio-accent/50 mr-2"></div>
             {skill}
           </li>
@@ -71,7 +72,7 @@ export const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 bg-portfolio-dark">
+    <section id="skills" className="py-20 bg-white">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div
           ref={ref}
@@ -80,9 +81,9 @@ export const Skills = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-3 text-white">Skills</h2>
-          <div className="h-1 w-20 bg-portfolio-accent mx-auto mb-6"></div>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-3 text-gray-800">Skills</h2>
+          <div className="h-1 w-20 colorful-gradient mx-auto mb-6"></div>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             I've developed a diverse set of skills throughout my journey in software development and data engineering.
           </p>
         </motion.div>
