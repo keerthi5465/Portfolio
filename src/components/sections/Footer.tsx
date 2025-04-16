@@ -4,12 +4,12 @@ import { Github, Linkedin, Code, Mail } from 'lucide-react';
 
 export const Footer = () => {
   return (
-    <footer className="bg-portfolio-dark text-white py-12">
+    <footer className="bg-portfolio-dark text-white py-12 border-t border-white/10">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-8">
           <h2 className="text-2xl font-bold mb-6">Thank You for Visiting!</h2>
           <p className="max-w-2xl mx-auto text-gray-300">
-            Thank you for taking the time to explore my portfolio. I'm excited about the possibility of working together and discussing how my skills and experiences could contribute to your team or project. Feel free to reach out through any of the contact methods provided.
+            Thank you for taking the time to explore my portfolio. I'm excited about the possibility of working together and discussing how my skills and experiences could contribute to your team or project.
           </p>
         </div>
 
@@ -18,38 +18,38 @@ export const Footer = () => {
             href="https://www.linkedin.com/in/keerthi5465/"
             target="_blank"
             rel="noopener noreferrer"
-            whileHover={{ y: -5 }}
-            className="w-10 h-10 rounded-full bg-portfolio-primary/20 flex items-center justify-center hover:bg-portfolio-primary/40 transition-colors"
+            whileHover={{ scale: 1.1 }}
+            className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
           >
-            <Linkedin size={20} />
+            <Linkedin size={24} />
           </motion.a>
           
           <motion.a
             href="https://github.com/keerthi5465"
             target="_blank"
             rel="noopener noreferrer"
-            whileHover={{ y: -5 }}
-            className="w-10 h-10 rounded-full bg-portfolio-primary/20 flex items-center justify-center hover:bg-portfolio-primary/40 transition-colors"
+            whileHover={{ scale: 1.1 }}
+            className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
           >
-            <Github size={20} />
+            <Github size={24} />
           </motion.a>
           
           <motion.a
             href="https://leetcode.com/u/Strict_Hayami/"
             target="_blank"
             rel="noopener noreferrer"
-            whileHover={{ y: -5 }}
-            className="w-10 h-10 rounded-full bg-portfolio-primary/20 flex items-center justify-center hover:bg-portfolio-primary/40 transition-colors"
+            whileHover={{ scale: 1.1 }}
+            className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
           >
-            <Code size={20} />
+            <Code size={24} />
           </motion.a>
           
           <motion.a
             href="mailto:keerthikorrapati555@gmail.com"
-            whileHover={{ y: -5 }}
-            className="w-10 h-10 rounded-full bg-portfolio-primary/20 flex items-center justify-center hover:bg-portfolio-primary/40 transition-colors"
+            whileHover={{ scale: 1.1 }}
+            className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
           >
-            <Mail size={20} />
+            <Mail size={24} />
           </motion.a>
         </div>
 
