@@ -1,7 +1,8 @@
 
+import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { FileText } from 'lucide-react';
+import { FileText, Linkedin, Github, Code, BookOpen } from 'lucide-react';
 
 export const About = () => {
   const [ref, inView] = useInView({
@@ -9,8 +10,35 @@ export const About = () => {
     threshold: 0.1,
   });
 
+  const socialLinks = [
+    { 
+      icon: Linkedin, 
+      url: "https://www.linkedin.com/in/keerthi5465/", 
+      color: "text-blue-600",
+      name: "LinkedIn"
+    },
+    { 
+      icon: Github, 
+      url: "https://github.com/keerthi5465", 
+      color: "text-gray-800",
+      name: "GitHub"
+    },
+    { 
+      icon: Code, 
+      url: "https://leetcode.com/u/Strict_Hayami/", 
+      color: "text-yellow-600",
+      name: "LeetCode"
+    },
+    { 
+      icon: BookOpen, 
+      url: "https://www.geeksforgeeks.org/user/korrapatkikib0i/", 
+      color: "text-green-600",
+      name: "GeeksforGeeks"
+    }
+  ];
+
   return (
-    <section id="about" className="py-20 bg-gray-50">
+    <section id="about" className="py-20 bg-white">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div
           ref={ref}
@@ -48,34 +76,24 @@ export const About = () => {
             </a>
           </div>
           
-          <div className="flex flex-wrap justify-center gap-3 mt-8">
-            <div className="bg-white p-4 rounded-lg shadow-md">
-              <h3 className="font-semibold text-portfolio-primary mb-2">LinkedIn</h3>
-              <a href="https://www.linkedin.com/in/keerthi5465/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-portfolio-primary transition-colors">
-                linkedin.com/in/keerthi5465/
-              </a>
-            </div>
-            
-            <div className="bg-white p-4 rounded-lg shadow-md">
-              <h3 className="font-semibold text-portfolio-primary mb-2">GitHub</h3>
-              <a href="https://github.com/keerthi5465" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-portfolio-primary transition-colors">
-                github.com/keerthi5465
-              </a>
-            </div>
-            
-            <div className="bg-white p-4 rounded-lg shadow-md">
-              <h3 className="font-semibold text-portfolio-primary mb-2">LeetCode</h3>
-              <a href="https://leetcode.com/u/Strict_Hayami/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-portfolio-primary transition-colors">
-                leetcode.com/u/Strict_Hayami/
-              </a>
-            </div>
-            
-            <div className="bg-white p-4 rounded-lg shadow-md">
-              <h3 className="font-semibold text-portfolio-primary mb-2">GeeksforGeeks</h3>
-              <a href="https://www.geeksforgeeks.org/user/korrapatkikib0i/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-portfolio-primary transition-colors">
-                geeksforgeeks.org/user/korrapatkikib0i/
-              </a>
-            </div>
+          <div className="flex flex-wrap justify-center gap-6 mt-8">
+            {socialLinks.map((social, index) => (
+              <motion.a
+                key={index}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.1 }}
+                className="flex flex-col items-center group"
+              >
+                <div className={`w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center 
+                  shadow-md hover:shadow-lg transition-all duration-300 
+                  ${social.color} group-hover:${social.color}/80`}>
+                  <social.icon size={28} />
+                </div>
+                <span className="mt-2 text-xs text-gray-600">{social.name}</span>
+              </motion.a>
+            ))}
           </div>
         </motion.div>
       </div>
