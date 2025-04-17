@@ -24,6 +24,8 @@ export const FloatingTorus = () => {
           opacity={0.8}
           metalness={0.5}
           roughness={0.2}
+          emissive="#6E59A5"
+          emissiveIntensity={0.2}
         />
       </mesh>
     </Float>

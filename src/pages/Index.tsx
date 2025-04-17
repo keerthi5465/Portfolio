@@ -11,13 +11,15 @@ import { Contact } from "@/components/sections/Contact";
 const Index = () => {
   return (
     <Layout>
-      <Hero />
-      <About />
-      <Education />
-      <Internship />
-      <Skills />
-      <Projects />
-      <Contact />
+      <div className="space-y-24">
+        <Hero />
+        <About />
+        <Education />
+        <Internship />
+        <Skills />
+        <Projects />
+        <Contact />
+      </div>
     </Layout>
   );
 };

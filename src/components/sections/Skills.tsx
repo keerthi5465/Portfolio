@@ -1,8 +1,3 @@
-
-import { Canvas } from '@react-three/fiber';
-import { Suspense } from 'react';
-import { InteractiveSkillsSection } from '../3d/InteractiveSkills';
-import { FloatingTorus } from '../3d/FloatingTorus';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Code, Server, Cpu, Database } from 'lucide-react';
@@ -102,20 +97,6 @@ export const Skills = () => {
               index={index}
             />
           ))}
-        </div>
-
-        <div className="mt-12 relative h-[500px]">
-          <Suspense fallback={null}>
-            <InteractiveSkillsSection />
-          </Suspense>
-        </div>
-        
-        <div className="absolute right-0 top-0 w-32 h-32 opacity-50">
-          <Canvas>
-            <ambientLight intensity={0.5} />
-            <pointLight position={[10, 10, 10]} />
-            <FloatingTorus />
-          </Canvas>
         </div>
       </div>
     </section>
