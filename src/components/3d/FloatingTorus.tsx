@@ -18,7 +18,7 @@ export const FloatingTorus = () => {
     <Float speed={2} rotationIntensity={1} floatIntensity={2}>
       <mesh ref={meshRef}>
         <torusGeometry args={[1, 0.3, 16, 32]} />
-        <meshPhongMaterial
+        <meshStandardMaterial
           color="#9b87f5"
           transparent
           opacity={0.8}

@@ -1,7 +1,11 @@
+
 import { Canvas } from '@react-three/fiber';
 import { Suspense } from 'react';
 import { InteractiveSkillsSection } from '../3d/InteractiveSkills';
 import { FloatingTorus } from '../3d/FloatingTorus';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import { Code, Server, Cpu, Database } from 'lucide-react';
 
 interface SkillCategoryProps {
   title: string;
