@@ -5,11 +5,9 @@ import { ThreeScene } from '../3d/Scene';
 
 export const Hero = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center pt-16">
+    <section id="home" className="relative min-h-screen flex items-center">
       {/* 3D Scene Background */}
-      <div className="absolute inset-0 -z-10">
-        <ThreeScene />
-      </div>
+      <ThreeScene />
       
       {/* Content */}
       <div className="container mx-auto px-4 md:px-6 relative z-10">
@@ -20,26 +18,26 @@ export const Hero = () => {
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl mx-auto"
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-gray-800">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white">
               <span className="block">Hi, I'm</span>
-              <span className="text-portfolio-primary block mt-2">Keerthi Korrapati</span>
+              <span className="text-portfolio-accent block mt-2">Keerthi Korrapati</span>
             </h1>
-            <h2 className="text-xl md:text-2xl font-medium text-gray-600 mb-8">
+            <h2 className="text-xl md:text-2xl font-medium text-gray-200 mb-8">
               Software Engineer & Data Engineer
             </h2>
-            <p className="text-lg text-gray-700 mb-8 max-w-lg mx-auto">
+            <p className="text-lg text-gray-300 mb-8 max-w-lg mx-auto">
               Passionate about creating innovative solutions and pushing the boundaries of technology.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="#contact"
-                className="px-6 py-3 rounded-full bg-portfolio-primary text-white font-medium hover:bg-portfolio-primary/90 transition-colors duration-300"
+                className="px-6 py-3 rounded-full bg-portfolio-accent text-white font-medium hover:bg-portfolio-accent/90 transition-colors duration-300"
               >
                 Contact Me
               </a>
               <a
                 href="#projects"
-                className="px-6 py-3 rounded-full border border-portfolio-primary text-portfolio-primary font-medium hover:bg-portfolio-primary/10 transition-colors duration-300 glass-card"
+                className="px-6 py-3 rounded-full border border-white text-white font-medium hover:bg-white/10 transition-colors duration-300 backdrop-blur-sm"
               >
                 View Projects
               </a>
@@ -56,7 +54,7 @@ export const Hero = () => {
       >
         <a 
           href="#about" 
-          className="flex flex-col items-center text-gray-600 hover:text-portfolio-primary transition-colors duration-300"
+          className="flex flex-col items-center text-white/80 hover:text-white transition-colors duration-300"
         >
           <span className="mb-2 text-sm">Scroll Down</span>
           <ArrowDown className="animate-bounce" size={20} />
