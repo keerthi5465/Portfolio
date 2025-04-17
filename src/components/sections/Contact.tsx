@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -41,7 +40,7 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gray-50">
+    <section id="contact" className="py-20 bg-white">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div
           ref={ref}
@@ -108,22 +107,7 @@ export const Contact = () => {
               </div>
             </div>
             
-            {/* Certifications */}
-            <div className="mt-12">
-              <h3 className="text-2xl font-bold text-portfolio-primary mb-6">Certifications</h3>
-              
-              <div className="space-y-4">
-                <div className="bg-white p-4 rounded-lg shadow-md">
-                  <h4 className="font-semibold">Microsoft Certified: Azure Data Fundamentals (DP-900)</h4>
-                  <p className="text-sm text-gray-600">November 2024</p>
-                </div>
-                
-                <div className="bg-white p-4 rounded-lg shadow-md">
-                  <h4 className="font-semibold">Microsoft Certified: Azure Data Scientist Associate (DP-100)</h4>
-                  <p className="text-sm text-gray-600">January 2025</p>
-                </div>
-              </div>
-            </div>
+            {/* Removed Certifications section */}
           </motion.div>
           
           {/* Contact Form */}
