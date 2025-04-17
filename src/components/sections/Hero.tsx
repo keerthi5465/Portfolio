@@ -1,11 +1,10 @@
-
 import { motion } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
 import { ThreeScene } from '../3d/Scene';
 
 export const Hero = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center pt-16 bg-white">
+    <section id="home" className="relative min-h-screen flex items-center pt-16 bg-white/80 backdrop-blur-sm">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div
@@ -68,4 +67,3 @@ export const Hero = () => {
     </section>
   );
 };
-

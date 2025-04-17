@@ -1,7 +1,7 @@
-
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { Code, Database, Server, Cpu, Users } from 'lucide-react';
+import { Canvas } from '@react-three/fiber';
+import { Suspense } from 'react';
+import { InteractiveSkillsSection } from '../3d/InteractiveSkills';
+import { FloatingTorus } from '../3d/FloatingTorus';
 
 interface SkillCategoryProps {
   title: string;
@@ -72,7 +72,7 @@ export const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 bg-white">
+    <section id="skills" className="py-20 bg-white/80 backdrop-blur-sm relative">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div
           ref={ref}
@@ -98,6 +98,20 @@ export const Skills = () => {
               index={index}
             />
           ))}
+        </div>
+
+        <div className="mt-12 relative h-[500px]">
+          <Suspense fallback={null}>
+            <InteractiveSkillsSection />
+          </Suspense>
+        </div>
+        
+        <div className="absolute right-0 top-0 w-32 h-32 opacity-50">
+          <Canvas>
+            <ambientLight intensity={0.5} />
+            <pointLight position={[10, 10, 10]} />
+            <FloatingTorus />
+          </Canvas>
         </div>
       </div>
     </section>
