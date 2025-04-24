@@ -85,6 +85,18 @@ export const Internship = () => {
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-3 text-portfolio-dark">Internship Experience</h2>
           <div className="h-1 w-20 bg-portfolio-primary mx-auto mb-6"></div>
+          
+          <div className="mb-12">
+            <div className="max-w-3xl mx-auto group relative overflow-hidden rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl">
+              <img 
+                src="/lovable-uploads/34bceb24-fa37-4c71-b94a-937f171a095c.png"
+                alt="Internship Completion Certificate - Futuresense Technologies"
+                className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300"></div>
+            </div>
+          </div>
+
           <p className="text-lg text-gray-700 max-w-2xl mx-auto">
             My professional experience has allowed me to apply my technical skills to real-world challenges.
           </p>
