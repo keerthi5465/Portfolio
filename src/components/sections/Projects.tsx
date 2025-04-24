@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Calendar, Github, PenTool, ExternalLink } from 'lucide-react';
@@ -144,8 +143,25 @@ export const Projects = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mt-16 bg-white backdrop-blur-lg rounded-lg shadow-lg p-8 border border-gray-100"
         >
-          <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">Certifications</h3>
+          <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">Microsoft Certifications</h3>
           
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="rounded-lg overflow-hidden shadow-md">
+              <img 
+                src="/lovable-uploads/c0b64276-6db5-48b5-8876-81eb964cd5d0.png" 
+                alt="Azure Data Scientist Associate Certificate" 
+                className="w-full h-auto"
+              />
+            </div>
+            <div className="rounded-lg overflow-hidden shadow-md">
+              <img 
+                src="/lovable-uploads/c468be7f-a502-4fb3-8d89-9c4a35ce709f.png" 
+                alt="Azure Data Fundamentals Certificate" 
+                className="w-full h-auto"
+              />
+            </div>
+          </div>
+
           <ul className="space-y-4">
             <li className="flex">
               <div className="mr-3 text-portfolio-primary"><PenTool size={20} /></div>

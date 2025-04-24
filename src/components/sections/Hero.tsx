@@ -1,6 +1,7 @@
+
 import { motion } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
-import { ThreeScene } from '../3d/Scene';
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 
 export const Hero = () => {
   return (
@@ -13,6 +14,12 @@ export const Hero = () => {
             transition={{ duration: 0.6 }}
             className="text-center lg:text-left"
           >
+            <div className="flex justify-center lg:justify-start mb-8">
+              <Avatar className="h-32 w-32 border-4 border-portfolio-primary/20">
+                <AvatarImage src="/lovable-uploads/3e9652d8-759e-4c6d-b4a4-42338784e62e.png" alt="Keerthi Korrapati" />
+                <AvatarFallback>KK</AvatarFallback>
+              </Avatar>
+            </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-gray-800">
               <span className="block">Hi, I'm</span>
               <span className="text-portfolio-primary block mt-2">Keerthi Korrapati</span>
