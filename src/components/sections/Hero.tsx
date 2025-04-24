@@ -1,12 +1,13 @@
 
 import { motion } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
+import { ThreeScene } from '@/components/3d/Scene';
 
 export const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center pt-16 bg-white/80 backdrop-blur-sm">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="flex flex-col items-center lg:items-start text-center lg:text-left max-w-3xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -36,6 +37,15 @@ export const Hero = () => {
                 View Projects
               </a>
             </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative h-[500px] w-full rounded-xl overflow-hidden shadow-xl"
+          >
+            <ThreeScene />
           </motion.div>
         </div>
       </div>
