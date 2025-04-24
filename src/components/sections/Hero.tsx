@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
 import { ThreeScene } from '@/components/3d/Scene';
+import { Avatar, AvatarImage } from "@/components/ui/avatar";
 
 export const Hero = () => {
   return (
@@ -13,17 +14,25 @@ export const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-gray-800">
-              <span className="block">Hi, I'm</span>
-              <span className="text-portfolio-primary block mt-2">Keerthi Korrapati</span>
-            </h1>
-            <h2 className="text-xl md:text-2xl font-medium text-gray-600 mb-8">
-              Software Engineer & Data Engineer
-            </h2>
-            <p className="text-lg text-gray-700 mb-8 max-w-lg mx-auto lg:mx-0">
+            <div className="flex items-center gap-6 mb-6">
+              <Avatar className="w-24 h-24 border-2 border-portfolio-primary shadow-lg">
+                <AvatarImage src="/lovable-uploads/e5f7d6c1-04a9-4c55-a8ed-1d6540af350c.png" alt="Profile" />
+              </Avatar>
+              <div>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800">
+                  <span className="block">Hi, I'm</span>
+                  <span className="text-portfolio-primary block mt-2">Keerthi Korrapati</span>
+                </h1>
+                <h2 className="text-xl md:text-2xl font-medium text-gray-600 mt-2">
+                  Software Engineer & Data Engineer
+                </h2>
+              </div>
+            </div>
+            
+            <p className="text-lg text-gray-700 mb-8 max-w-lg">
               Passionate about creating innovative solutions and pushing the boundaries of technology.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <div className="flex flex-col sm:flex-row gap-4 justify-start">
               <a
                 href="#contact"
                 className="px-6 py-3 rounded-full bg-portfolio-primary text-white font-medium hover:bg-portfolio-primary/90 transition-colors duration-300"
