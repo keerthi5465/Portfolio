@@ -50,14 +50,16 @@ export const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="aspect-square w-full max-w-lg mx-auto relative overflow-hidden rounded-lg"
+            className="relative hidden lg:block"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-portfolio-primary/30 to-portfolio-secondary/30 rounded-lg" />
-            <img 
-              src="/lovable-uploads/3e9652d8-759e-4c6d-b4a4-42338784e62e.png"
-              alt="Keerthi Korrapati"
-              className="object-cover h-full w-full rounded-lg"
-            />
+            <div className="w-full h-[500px] rounded-lg overflow-hidden shadow-xl">
+              <img 
+                src="/lovable-uploads/3e9652d8-759e-4c6d-b4a4-42338784e62e.png"
+                alt="Keerthi Korrapati"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-tr from-portfolio-primary/20 to-transparent"></div>
+            </div>
           </motion.div>
         </div>
       </div>

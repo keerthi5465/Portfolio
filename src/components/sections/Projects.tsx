@@ -141,41 +141,43 @@ export const Projects = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-16 bg-white backdrop-blur-lg rounded-lg shadow-lg p-8 border border-gray-100"
+          className="mt-20 bg-white backdrop-blur-lg rounded-xl shadow-lg p-8 border border-gray-100"
         >
-          <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">Microsoft Certifications</h3>
+          <h3 className="text-2xl font-bold text-gray-800 mb-8 text-center">Microsoft Certifications</h3>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="rounded-lg overflow-hidden shadow-md">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="group relative overflow-hidden rounded-xl shadow-md transition-all duration-300 hover:shadow-xl">
               <img 
                 src="/lovable-uploads/c0b64276-6db5-48b5-8876-81eb964cd5d0.png" 
                 alt="Azure Data Scientist Associate Certificate" 
-                className="w-full h-auto"
+                className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
               />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300"></div>
             </div>
-            <div className="rounded-lg overflow-hidden shadow-md">
+            <div className="group relative overflow-hidden rounded-xl shadow-md transition-all duration-300 hover:shadow-xl">
               <img 
                 src="/lovable-uploads/c468be7f-a502-4fb3-8d89-9c4a35ce709f.png" 
                 alt="Azure Data Fundamentals Certificate" 
-                className="w-full h-auto"
+                className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
               />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300"></div>
             </div>
           </div>
 
-          <ul className="space-y-4">
-            <li className="flex">
-              <div className="mr-3 text-portfolio-primary"><PenTool size={20} /></div>
-              <p className="text-gray-600">AWS Certified Cloud Practitioner</p>
-            </li>
-            <li className="flex">
-              <div className="mr-3 text-portfolio-primary"><PenTool size={20} /></div>
-              <p className="text-gray-600">Microsoft Azure Fundamentals (AZ-900)</p>
-            </li>
-            <li className="flex">
-              <div className="mr-3 text-portfolio-primary"><PenTool size={20} /></div>
-              <p className="text-gray-600">Google Data Analytics Professional Certificate</p>
-            </li>
-          </ul>
+          <div className="mt-8 space-y-4">
+            <div className="flex items-center space-x-3 text-gray-700">
+              <PenTool size={20} className="text-portfolio-primary" />
+              <p>AWS Certified Cloud Practitioner</p>
+            </div>
+            <div className="flex items-center space-x-3 text-gray-700">
+              <PenTool size={20} className="text-portfolio-primary" />
+              <p>Microsoft Azure Fundamentals (AZ-900)</p>
+            </div>
+            <div className="flex items-center space-x-3 text-gray-700">
+              <PenTool size={20} className="text-portfolio-primary" />
+              <p>Google Data Analytics Professional Certificate</p>
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>
